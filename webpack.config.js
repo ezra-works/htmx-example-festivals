@@ -13,7 +13,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  //   devtool: "source-map",
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -25,13 +25,17 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /festival.html$/i,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Makar Sankranti Pongal Lohri",
       filename: "index.html",
-      template: "src/template.html",
+      template: "src/template/main.html",
     }),
     new Dotenv(),
   ],

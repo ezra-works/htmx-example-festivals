@@ -1,9 +1,9 @@
 import "htmx.org";
 import "./my_custom";
-import "htmx.org/dist/ext/client-side-templates";
-import "nunjucks";
 import "./main.css";
-import "./heading";
+import "nunjucks";
+import "htmx.org/dist/ext/client-side-templates";
+import "./template/festival.html";
 
 // Read vars from envVariables object
 const UNSPLASH_HEADER_KEY = process.env.UNSPLASH_HEADER_KEY;

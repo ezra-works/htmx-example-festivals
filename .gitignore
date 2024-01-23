@@ -130,9 +130,5 @@ dist
 .pnp.*
 
 # app
-*-std.html
-*-partial.html
-template-festive.html
-extended-client-side-templates.js
-festival.js
+*/trail/
 heading.js
