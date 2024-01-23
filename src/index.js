@@ -1,6 +1,6 @@
 import "htmx.org";
 import "./my_custom";
-import "./main.css";
+import "./styles/main.css";
 import "nunjucks";
 import "htmx.org/dist/ext/client-side-templates";
 import "./template/festival.html";
