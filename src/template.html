@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
+  <body class="bg-gray-400">
     <div id="heading"></div>
 
     <!--  <div class="container">
@@ -18,19 +18,22 @@
       <button
         hx-get="https://api.unsplash.com/search/photos?query=pongal"
         hx-swap="innerHTML"
-        hx-target="#content"
-        mustache-array-template="foo"
+        hx-target="#festivals"
+        nunjucks-array-template="festivalList"
       >
         Click Me
       </button>
 
-      <p id="content">Start</p>
+      <script id="festivalList" type="nunjucks">
+        {% for item in data.results %}
+          {% include "festival.html" %}
+          <!-- <li> {{ item.results.id}} </li> -->
+        {% else %}
+          <li>This would display if the 'item' collection were empty</li>
+        {% endfor %}
+      </script>
 
-      <template id="foo">
-        {{#data.results}}
-        <p>{{alt_description}} at {{id}} is with {{urls.full}}</p>
-        {{/data.results}}
-      </template>
+      <ul id="festivals"></ul>
     </div>
   </body>
 </html>

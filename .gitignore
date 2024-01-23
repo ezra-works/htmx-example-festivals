@@ -130,7 +130,9 @@ dist
 .pnp.*
 
 # app
-mustache-std.html
+*-std.html
+*-partial.html
 template-festive.html
+extended-client-side-templates.js
 festival.js
 heading.js

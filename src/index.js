@@ -1,9 +1,8 @@
 import "htmx.org";
 import "./my_custom";
 import "htmx.org/dist/ext/client-side-templates";
-import "mustache";
+import "nunjucks";
 import "./main.css";
-import "./festival";
 import "./heading";
 
 // Read vars from envVariables object
@@ -13,7 +12,6 @@ const UNSPLASH_HEADER_VALUE = process.env.UNSPLASH_HEADER_VALUE;
 // console.log("UNSPLASH_HEADER_VALUE", UNSPLASH_HEADER_VALUE);
 
 document.body.addEventListener("htmx:configRequest", function (evt) {
-  // evt.detail.parameters['auth_token'] = getAuthToken(); // add a new parameter into the request
   evt.detail.headers[UNSPLASH_HEADER_KEY] = UNSPLASH_HEADER_VALUE; // add a new header into the request
   // console.log(
   //   "evt.detail.headers[UNSPLASH_HEADER_KEY]",
