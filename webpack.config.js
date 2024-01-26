@@ -27,11 +27,6 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
-      // {
-      //   test: /\.html$/i,
-      //   type: "asset/resource",
-      //   include: [path.join(__dirname, "src/template/nunjucks/")],
-      // },
       {
         test: /\.njk$/,
         use: [
