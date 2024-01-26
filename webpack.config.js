@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
@@ -19,15 +20,28 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        // use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      // {
+      //   test: /\.html$/i,
+      //   type: "asset/resource",
+      //   include: [path.join(__dirname, "src/template/nunjucks/")],
+      // },
       {
-        test: /festival.html$/i,
-        type: "asset/resource",
+        test: /\.njk$/,
+        use: [
+          {
+            loader: "simple-nunjucks-loader",
+            options: {
+              searchPaths: ["src/template/nunjucks/"],
+            },
+          },
+        ],
       },
     ],
   },
@@ -35,8 +49,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Makar Sankranti Pongal Lohri",
       filename: "index.html",
-      template: "src/template/main.html",
+      template: "src/template/main.njk",
     }),
     new Dotenv(),
+    new MiniCssExtractPlugin({ filename: "[name][contenthash].css" }),
   ],
 };
