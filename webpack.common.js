@@ -1,10 +1,8 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "production",
   entry: {
     bundle: path.resolve(__dirname, "src/index.js"),
   },
@@ -14,14 +12,12 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-        // use: ["style-loader", "css-loader", "postcss-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -47,6 +43,5 @@ module.exports = {
       template: "src/template/main.njk",
     }),
     new Dotenv(),
-    new MiniCssExtractPlugin({ filename: "[name][contenthash].css" }),
   ],
 };
