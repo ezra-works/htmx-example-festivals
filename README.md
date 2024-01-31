@@ -25,8 +25,8 @@ Includes the following web-tech
 The displays the harvest festivals across Indian subcontinent.
 
 - index.js (main javascript)
-- src/template/main.html (template)
-- styles/main.scss (styles)
+- src/template/main.njk (template)
+- styles/main.css (styles)
 
-> [!TIP] 
+> [!TIP]
 > For more info, please read [Hypermedia-Driven-Application-Architecture](https://htmx.org/essays/hypermedia-driven-applications/#the-hypermedia-driven-application-architecture)
