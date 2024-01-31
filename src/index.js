@@ -3,6 +3,7 @@ import "./my_custom";
 import "./styles/main.css";
 import "nunjucks";
 import "htmx.org/dist/ext/client-side-templates";
+import structures from "./assets/structures.svg";
 
 // Read vars from envVariables object
 const UNSPLASH_HEADER_KEY = process.env.UNSPLASH_HEADER_KEY;
