@@ -28,5 +28,7 @@ The displays the harvest festivals across Indian subcontinent.
 - src/template/main.njk (template)
 - styles/main.css (styles)
 
+![alt text](src/assets/htmx-example-festivals.png?raw=true)
+
 > [!TIP]
 > For more info, please read [Hypermedia-Driven-Application-Architecture](https://htmx.org/essays/hypermedia-driven-applications/#the-hypermedia-driven-application-architecture)
