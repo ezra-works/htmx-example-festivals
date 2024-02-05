@@ -28,13 +28,14 @@
               <img class="h-36 self-center md:self-stretch lg:self-start" src="{{ item.img }}" alt="{{ item.alt_description }}"/>
               <figure class="m-10 flex flex-auto flex-col justify-between">
                 <blockquote class="text-lg leading-8 text-gray-900">
-                  <p>{{ item.description }}</p>
+                  <p>“ {{ item.description }}”</p>
                 </blockquote>
                 <figcaption class="mt-10 flex items-center gap-x-6">
-                  <img class="h-14 w-14 rounded-full bg-gray-50" src="{{ item.img }}" alt="{{ item.author }}">
+                  <img class="h-14 rounded-full bg-gray-50" src="{{ item.img }}" alt="{{ item.author }}">
                     <div class="text-base">
-                      <div class="font-semibold text-gray-900">{{ item.author }}</div>
-                      <div class="mt-1 text-gray-500">Designed by Freepik</div>
+                      <div class="font-semibold text-lg text-gray-900">{{ item.author }}</div>
+                      <div class="mt-1 font-mono text-sm text-gray-500">Designed by Freepik
+                      </div>
                     </div>
                   </figcaption>
                 </figure>
