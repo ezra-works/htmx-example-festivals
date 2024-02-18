@@ -16,15 +16,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        exclude: ["/node_modules/", "/server/"],
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        exclude: ["/node_modules/", "/server/"],
         type: "asset/resource",
       },
       {
         test: /\.njk$/,
+        exclude: ["/node_modules/", "/server/"],
         use: [
           {
             loader: "simple-nunjucks-loader",
@@ -42,6 +44,8 @@ module.exports = {
       filename: "index.html",
       template: "src/template/main.njk",
     }),
-    new Dotenv(),
+    new Dotenv({
+      path: "../.env", // Path to .env file (this is the default)
+    }),
   ],
 };

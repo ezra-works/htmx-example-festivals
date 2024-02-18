@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JS Bin</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <!-- <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script> -->
+    <script src="./extended-client-side-templates.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+  </head>
+  <body>
+    <div hx-ext="client-side-templates">
+      <button
+        hx-get="https://jsonplaceholder.typicode.com/users"
+        hx-swap="innerHTML"
+        hx-target="#content"
+        mustache-array-template="foo"
+      >
+        Click Me
+      </button>
+
+      <p id="content">Start</p>
+
+      <template id="foo">
+        {{#data}}
+        <p>{{name}} at {{email}} is with {{company.name}}</p>
+        {{/data}}
+      </template>
+    </div>
+
+    <div hx-ext="client-side-templates">
+      <button
+        hx-get="https://api.unsplash.com/search/photos?query=pongal"
+        hx-headers='{"Authorization": "Client-ID yQ3koYj1dJF0YF2CYiMGsmbnHBb4oqPciRaSWKTQ82U"}'
+        hx-swap="innerHTML"
+        hx-target="#splash"
+        mustache-array-template="bar"
+        mustache-partial-template="barfoo"
+      >
+        Click Me
+      </button>
+
+      <div id="splash">Start</div>
+
+      <template id="bar">
+        {{#data.results}} * {{id}} {{/data.results}}
+      </template>
+    </div>
+  </body>
+</html>

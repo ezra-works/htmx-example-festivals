@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nunjucks-std</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://unpkg.com/nunjucks@latest"></script>
+  </head>
+  <body>
+    <h1>Posts</h1>
+
+    <div hx-ext="client-side-templates">
+      <!-- hx-trigger="load, click" makes sure that api gets called on page load AND on click  !-->
+      <button
+        type="button"
+        hx-trigger="load, click"
+        hx-get="https://jsonplaceholder.typicode.com/users"
+        nunjucks-array-template="userlist"
+        hx-target="#list"
+        hx-swap="innerHTML"
+      >
+        Reload
+      </button>
+
+      <script id="userlist" type="nunjucks">
+        {% for item in data %}
+          <!-- <p>{{ item.id }}</p> -->
+          {% include "nunjucks-partial.html" %}
+        {% else %}
+          <li>This would display if the 'item' collection were empty</li>
+        {% endfor %}
+      </script>
+
+      <ul id="list"></ul>
+    </div>
+  </body>
+</html>
