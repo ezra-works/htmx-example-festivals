@@ -12,7 +12,8 @@ Includes the following web-tech
 - [TailwindCSS](https://tailwindcss.com)
 - [Nunjucks Template Engine](https://mozilla.github.io/nunjucks/)
 - [Webpack](https://webpack.js.org)
-- [Unsplash API](https://unsplash.com/documentation)
+- [Expressjs](https://expressjs.com)
+- [FreePik](https://www.freepik.com)
 
 ## Usage production
 
@@ -28,7 +29,7 @@ The displays the harvest festivals across Indian subcontinent.
 - src/template/main.njk (template)
 - styles/main.css (styles)
 
-![alt text](src/assets/htmx-example-festivals.png?raw=true)
+![alt text](client/src/assets/htmx-example-festivals.png?raw=true)
 
 > [!TIP]
 > For more info, please read [Hypermedia-Driven-Application-Architecture](https://htmx.org/essays/hypermedia-driven-applications/#the-hypermedia-driven-application-architecture)
